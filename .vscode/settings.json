@@ -7,6 +7,7 @@
     "javascriptreact",
     "vue"
   ],
+  "css.validate": false,
   "cSpell.words": [
     "qrcode",
     "shamemaru"

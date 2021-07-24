@@ -1,8 +1,6 @@
 <template>
-  <div id="app">
-    <QRCodeScanner />
-    <ResultTable />
-  </div>
+  <QRCodeScanner />
+  <ResultTable />
 </template>
 
 <script>
@@ -19,10 +17,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#app {
-  max-width: 90vmin;
-  margin: 0 auto;
-}
-</style>

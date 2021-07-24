@@ -9,6 +9,8 @@ import {
   clear as clearResult,
 } from '../store/scanResults';
 
+import { Html5QrcodeScanner } from '@typings/Html5Qrcode';
+
 export default {
   name: 'QRCodeScanner',
   props: {
@@ -17,6 +19,7 @@ export default {
   },
   setup(props) {
     const scannerElRef = ref();
+    /** @type {import('vue').Ref<Html5QrcodeScanner>} */
     const scanner = ref();
 
     const onScanSuccess = (decodedText) => {
