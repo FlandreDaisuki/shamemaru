@@ -135,7 +135,7 @@ class Html5Qrcode {
   /**
    * Returns a Promise with a list of all cameras supported by the device.
    */
-  static getCameras(): Array<CameraDevice> // Returns a Promise
+  static getCameras(): Promise<CameraDevice[]> // Returns a Promise
 
   /**
    * Initialize QR Code scanner.

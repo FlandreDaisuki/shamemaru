@@ -9,7 +9,7 @@ import {
   clear as clearResult,
 } from '../store/scanResults';
 
-import { Html5QrcodeScanner } from '@typings/Html5Qrcode';
+/** @typedef {import('@typings/Html5Qrcode').Html5QrcodeScanner} Html5QrcodeScanner */
 
 export default {
   name: 'QRCodeScanner',
