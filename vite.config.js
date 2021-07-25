@@ -10,6 +10,10 @@ export default defineConfig({
       manifest: {
         name: '写メ丸',
         short_name: '写メ丸',
+        icons: [{
+          src: '/icons/128.png',
+          size: '128x128',
+        }],
       },
     }),
   ],
