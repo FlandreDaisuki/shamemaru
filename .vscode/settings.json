@@ -8,6 +8,7 @@
     "vue"
   ],
   "css.validate": false,
+  "css.lint.unknownAtRules": "ignore",
   "cSpell.words": [
     "qrcode",
     "shamemaru"

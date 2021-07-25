@@ -38,7 +38,17 @@ export default {
 </script>
 
 <style scoped>
+ul {
+  @apply list-none;
+}
+li {
+  @apply text-xl shadow truncate;
+  @apply hover:bg-gray-200;
+}
+li > * {
+  @apply p-3 block truncate;
+}
 a {
-  color: #42b983;
+  @apply text-green-500;
 }
 </style>
