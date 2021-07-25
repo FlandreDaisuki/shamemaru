@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
+      registerType: 'autoUpdate',
       manifest: {
         name: '写メ丸',
         short_name: '写メ丸',
