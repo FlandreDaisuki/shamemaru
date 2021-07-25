@@ -56,7 +56,7 @@ export default {
 
 <style scoped>
 ul {
-  @apply list-none;
+  @apply list-none p-0 m-0;
 }
 li {
   @apply text-xl shadow truncate;
