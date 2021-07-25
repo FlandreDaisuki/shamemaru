@@ -15,7 +15,7 @@ export default {
   name: 'QRCodeScanner',
   props: {
     qrbox: { type: Number, default: 500 },
-    fps: { type: Number, default: 10 },
+    fps: { type: Number, default: 100 },
   },
   setup(props) {
     const scannerElRef = ref();
