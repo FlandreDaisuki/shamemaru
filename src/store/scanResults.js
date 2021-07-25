@@ -1,15 +1,18 @@
 import { ref, computed } from 'vue';
 
-export const results = ref([]);
+const stack = ref([]);
 
-const last = computed(() => results.value?.[results.value.length - 1]);
+const latest = computed(() => stack.value?.[stack.value.length - 1]);
+
+// results order from latest to oldest
+export const results = computed(() => stack.value.slice().reverse());
 
 export const push = (result) => {
-  if (last.value !== result) {
-    results.value.push(result);
+  if (latest.value !== result) {
+    stack.value.push(result);
   }
 };
 
 export const clear = () => {
-  results.value = [];
+  stack.value = [];
 };

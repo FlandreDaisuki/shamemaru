@@ -3,7 +3,7 @@
     <li v-for="(result, index) in results" :key="index">
       <template v-if="isUrl(result)">
         <a
-          :href="result"
+          :href="getHref(result)"
           target="_blank"
           rel="noopener noreferrer"
         >{{ result }}</a>
@@ -17,21 +17,29 @@
 
 <script>
 import { results } from '../store/scanResults';
-
-const isUrl = (url) => {
-  try {
-    return Boolean(new URL(url));
-  } catch {
-    return false;
-  }
-};
+import { is } from '../utils/validators';
 
 export default {
   name: 'ResultTable',
   setup(){
+    const getHref = (text) => {
+      const url = new URL(text);
+      if (/^sms/i.test(url.protocol)) {
+        if (is.mobile.iOS()) {
+          url.protocol = 'sms:';
+          return url.href;
+        }
+        if (is.mobile.Android()) {
+          url.protocol = 'SMSTO:';
+          return url.href;
+        }
+      }
+      return String(url);
+    };
     return {
       results,
-      isUrl,
+      isUrl: is.url,
+      getHref,
     };
   },
 };
