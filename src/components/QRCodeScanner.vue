@@ -14,7 +14,7 @@ import {
 export default {
   name: 'QRCodeScanner',
   props: {
-    qrbox: { type: Number, default: 250 },
+    qrbox: { type: Number, default: 500 },
     fps: { type: Number, default: 10 },
   },
   setup(props) {

@@ -16,12 +16,21 @@
 </template>
 
 <script>
+import { watch } from 'vue';
 import { results } from '../store/scanResults';
 import { is } from '../utils/validators';
+import { useToasted } from '../composables/toasted';
 
 export default {
   name: 'ResultTable',
   setup(){
+    const { toasted } = useToasted();
+    watch(results, () => {
+      if (results.value.length) {
+        toasted.success('掃到ㄌ！');
+      }
+    });
+
     const getHref = (text) => {
       const url = new URL(text);
       if (/^sms/i.test(url.protocol)) {
@@ -34,7 +43,7 @@ export default {
           return url.href;
         }
       }
-      return String(url);
+      return url.href;
     };
     return {
       results,
